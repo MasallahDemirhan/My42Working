@@ -6,7 +6,7 @@
 /*   By: mademirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:41:06 by mademirh          #+#    #+#             */
-/*   Updated: 2022/08/08 12:04:31 by mademirh         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:34:58 by mademirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	open_file(const char *s)
 	while (s[i])
 		i++;
 	if (!i || ft_strncmp(".ber", &s[i - 4], 4))
-		return (0);
+		return (put_error("Error"));
 	return (open(s, O_RDONLY));
 }
 
