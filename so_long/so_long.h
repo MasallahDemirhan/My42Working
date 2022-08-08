@@ -6,16 +6,16 @@
 /*   By: mademirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:28:43 by mademirh          #+#    #+#             */
-/*   Updated: 2022/08/08 12:43:58 by mademirh         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:42:12 by mademirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../minilibx/mlx.h"
-# include "../libft/libft.h"
-# include "../get_next_line/get_next_line.h"
+# include "./minilibx/mlx.h"
+# include "./libft/libft.h"
+# include "./get_next_line/get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
