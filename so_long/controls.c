@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   controls.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mademirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/08 12:46:47 by mademirh          #+#    #+#             */
+/*   Updated: 2022/08/08 12:47:14 by mademirh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	left_a(t_map *data, int c)
@@ -21,6 +33,7 @@ int	left_a(t_map *data, int c)
 	printf("Step.a : %i\n", data->counter);
 	return (1);
 }
+
 int	up_w(t_map *data, int c)
 {
 	int	i;
@@ -42,6 +55,7 @@ int	up_w(t_map *data, int c)
 	printf("Step.a : %i\n", data->counter);
 	return (1);
 }
+
 int	down_s(t_map *data, int c)
 {
 	int	i;
@@ -63,6 +77,7 @@ int	down_s(t_map *data, int c)
 	printf("Step.a : %i\n", data->counter);
 	return (1);
 }
+
 int	right_d(t_map *data, int c)
 {
 	int	i;

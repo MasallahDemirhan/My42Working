@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   controls_other.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mademirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/08 12:47:27 by mademirh          #+#    #+#             */
+/*   Updated: 2022/08/08 12:53:23 by mademirh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	put_score(t_map *data)
@@ -5,8 +17,19 @@ void	put_score(t_map *data)
 	char	*score;
 
 	score = ft_itoa(data->counter);
-	mlx_string_put(data->mlx, data->win, 62, 62, 0xFF0000, score);
+	mlx_string_put(data->mlx, data->win, 62, 62, 0xFFFFFF, score);
 	free(score);
+}
+
+void	move2(t_map *data, int i, int j)
+{
+	data->map[j][i] = '0';
+	put_image(data);
+	data->map[j][i] = 'P';
+	data->player_column = i;
+	data->player_row = j;
+	data->collectables--;
+	data->counter++;
 }
 
 int	move(t_map *data, int i, int j)
@@ -27,15 +50,7 @@ int	move(t_map *data, int i, int j)
 		data->counter++;
 	}
 	if (data->map[j][i] == 'C')
-	{
-		data->map[j][i] = '0';
-		put_image(data);
-		data->map[j][i] = 'P';
-		data->player_column = i;
-		data->player_row = j;
-		data->collectables--;
-		data->counter++;
-	}
+		move2(data, i, j);
 	return (1);
 }
 
@@ -50,9 +65,9 @@ int	exit_game(t_map *data)
 	}
 	while (i < data->row)
 	{
-	 	free(data->map[i]);
-	 	i++;
+		free(data->map[i]);
+		i++;
 	}
 	free(data->map);
-    exit(0);
+	exit(0);
 }

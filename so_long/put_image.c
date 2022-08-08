@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   put_image.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mademirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/08 12:09:59 by mademirh          #+#    #+#             */
+/*   Updated: 2022/08/08 12:46:01 by mademirh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	put_player(t_map *data, int height, int width)
@@ -27,7 +39,8 @@ void	get_img(t_map *data)
 	data->player = mlx_xpm_file_to_image(data->mlx, "./img/player.xpm", &i, &j);
 	data->collectable = mlx_xpm_file_to_image(data->mlx, "./img/coin.xpm",
 			&i, &j);
-	data->background = mlx_xpm_file_to_image(data->mlx, "./img/background.xpm", &i, &j);
+	data->background = mlx_xpm_file_to_image(data->mlx, "./img/background.xpm",
+			&i, &j);
 	data->wall = mlx_xpm_file_to_image(data->mlx, "./img/wall.xpm", &i, &j);
 	data->exit = mlx_xpm_file_to_image(data->mlx, "./img/exitdoor.xpm", &i, &j);
 	if (!data->player || !data->collectable || !data->background
@@ -36,7 +49,14 @@ void	get_img(t_map *data)
 		printf("Error\n");
 		exit_game(data);
 	}
-	
+}
+
+void	put_image_e(t_map *data, int i, int j)
+{
+	mlx_put_image_to_window(data->mlx, data->win,
+		data->background, i * 64, j * 64);
+	mlx_put_image_to_window(data->mlx, data->win,
+		data->exit, i * 64, j * 64);
 }
 
 void	put_image(t_map *data)
@@ -60,12 +80,7 @@ void	put_image(t_map *data)
 				mlx_put_image_to_window(data->mlx, data->win,
 					data->background, i * 64, j * 64);
 			if (data->map[j][i] == 'E')
-			{
-				mlx_put_image_to_window(data->mlx, data->win,
-					data->background, i * 64, j * 64);
-				mlx_put_image_to_window(data->mlx, data->win,
-					data->exit, i * 64, j * 64);
-			}
+				put_image_e(data, i, j);
 			if (data->map[j][i] == 'P')
 				put_player(data, j, i);
 		}
