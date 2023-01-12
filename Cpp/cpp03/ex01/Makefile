@@ -1,8 +1,8 @@
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 FLAGS = c++ -Wall -Wextra -Werror -std=c++98 
 
-NAME = clapTrap
+NAME = scavTrap
 
 all : $(NAME)
 
@@ -16,5 +16,6 @@ fclean : clean
 		@echo cleaning 100%
 
 re : fclean all
+	rm -f $(NAME)
 
 .Phony : clean fclean all re

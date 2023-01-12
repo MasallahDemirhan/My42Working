@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _hitPoint(10), _energyPoint(10), _attackDamege(0)
+ClapTrap::ClapTrap(): _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
     cout << "Default constructor called" << endl;
 }
 
-ClapTrap::ClapTrap(string name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamege(0)
+ClapTrap::ClapTrap(string name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
     cout << _name << ": String constructor called" << endl;
 }
@@ -19,7 +19,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &obj)
     _name = obj._name;
     _energyPoint = obj._energyPoint;
     _hitPoint = obj._hitPoint;
-    _attackDamege = obj._attackDamege;
+    _attackDamage = obj._attackDamage;
     return(*this);
 }
 
@@ -34,7 +34,7 @@ void ClapTrap::attack(const std::string& target)
 {
     if (_hitPoint > 0 && _energyPoint > 0)
     {
-        cout << "ClapTrap   " << _name << " attack   " << target << " , cauising  " << _attackDamege << " points of damage!" << endl;
+        cout << "ClapTrap   " << _name << " attack   " << target << " , cauising  " << _attackDamage << " points of damage!" << endl;
         _energyPoint -= 1;
     }else
     {
@@ -68,7 +68,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     }
     else
     {
-        cout << _name << "don't have any energy!" << endl;
+        cout << "ClapTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     
     }
     
@@ -76,4 +76,4 @@ void ClapTrap::beRepaired(unsigned int amount)
     int ClapTrap::getHit() {return (_hitPoint);}
     int ClapTrap::getEnergy() {return (_energyPoint);}
     string ClapTrap::getName() {return (_name);}
-    int ClapTrap::getDamege() {return (_attackDamage);}
+    int ClapTrap::getDamage() {return (_attackDamage);}

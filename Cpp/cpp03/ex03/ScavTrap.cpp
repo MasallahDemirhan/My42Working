@@ -3,7 +3,6 @@
 
 ScavTrap::ScavTrap()
 {
-    setName("ScavTrap ");
     setHit(100);
     setEnergy(50);
     setDamage(20);
@@ -47,7 +46,7 @@ void ScavTrap::attack(const std::string& target)
         _energyPoint -= 1;
     }else
     {
-        cout << "ScavTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
+        cout << "ClapTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     }
     
     

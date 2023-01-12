@@ -16,7 +16,7 @@ private:
     string _name;
     int    _hitPoint;
     int    _energyPoint;
-    int    _attackDamege;
+    int    _attackDamage;
 
 public:
 
@@ -32,7 +32,7 @@ public:
     int getHit();
     int getEnergy();
     string getName();
-    int getDamege();
+    int getDamage();
 };
 
 

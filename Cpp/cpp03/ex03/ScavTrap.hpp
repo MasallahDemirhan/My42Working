@@ -4,11 +4,7 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-using std::endl;
-using std::string;
-using std::cout;
-
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 
 public:

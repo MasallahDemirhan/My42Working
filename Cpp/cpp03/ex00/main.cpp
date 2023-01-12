@@ -3,11 +3,17 @@
 int main()
 {
     ClapTrap clap("Bonbon");
+
+    cout << "Damage : " << clap.getDamage() << endl;
+    cout << "Energy : " << clap.getEnergy() << endl;
+    cout << "HitPoint : " << clap.getHit() << endl;
+
     clap.attack("Tonton");
-    clap.takeDamage(4);
     clap.beRepaired(2);
-    cout << clap.getHit() << endl;
-    cout << clap.getEnergy() << endl;
+
+    cout << "Damage : " << clap.getDamage() << endl;
+    cout << "Energy : " << clap.getEnergy() << endl;
+    cout << "HitPoint : " << clap.getHit() << endl;
    
-   
+   return 0;
 }
