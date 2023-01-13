@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(): _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
-    cout << "Default constructor called" << endl;
+    cout << "ClapTrap: Default constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(string name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
@@ -40,6 +40,7 @@ void ClapTrap::attack(const std::string& target)
     {
         cout << "ClapTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     }
+    this->takeDamage(_attackDamage);
     
     
 }

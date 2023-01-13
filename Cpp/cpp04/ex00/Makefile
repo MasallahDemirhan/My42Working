@@ -1,8 +1,8 @@
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp
 
 FLAGS = c++ -Wall -Wextra -Werror -std=c++98 
 
-NAME = fragTrap
+NAME = animals
 
 all : $(NAME)
 
@@ -16,6 +16,5 @@ fclean : clean
 		@echo cleaning 100%
 
 re : fclean all
-
 
 .Phony : clean fclean all re

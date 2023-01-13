@@ -10,6 +10,7 @@ int main()
 
     clap.attack("Tonton");
     clap.beRepaired(2);
+    clap.takeDamage(3);
 
     cout << "Damage : " << clap.getDamage() << endl;
     cout << "Energy : " << clap.getEnergy() << endl;

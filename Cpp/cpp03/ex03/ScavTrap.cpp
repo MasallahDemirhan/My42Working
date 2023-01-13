@@ -6,7 +6,7 @@ ScavTrap::ScavTrap()
     setHit(100);
     setEnergy(50);
     setDamage(20);
-    cout << "Default constructor called" << endl;
+    cout << "ScavTrap: Default constructor called" << endl;
 }
 
 ScavTrap::ScavTrap(string name)
@@ -48,7 +48,7 @@ void ScavTrap::attack(const std::string& target)
     {
         cout << "ClapTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     }
-    
+    this->takeDamage(getDamage());
     
 }
 

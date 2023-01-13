@@ -41,6 +41,7 @@ void ClapTrap::attack(const std::string& target)
         cout << "ClapTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     }
     
+    this->takeDamage(_attackDamage);
     
 }
 

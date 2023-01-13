@@ -6,7 +6,7 @@ FragTrap::FragTrap()
     setHit(100);
     setEnergy(100);
     setDamage(30);
-    cout << "Default constructor called" << endl;
+    cout << "FragTrap: Default constructor called" << endl;
 }
 
 FragTrap::FragTrap(string name)

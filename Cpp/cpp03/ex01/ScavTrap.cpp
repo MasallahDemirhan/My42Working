@@ -49,7 +49,7 @@ void ScavTrap::attack(const std::string& target)
     {
         cout << "ScavTrap " << _name << " don't have " << (_energyPoint < 0 ? "energy!" : "hit point!" ) << endl;
     }
-    
+    this->takeDamage(getDamage());
     
 }
 

@@ -7,7 +7,7 @@ DiamondTrap::DiamondTrap()
     FragTrap::setHit(100);
     ScavTrap::setEnergy(50);
     FragTrap::setDamage(30);
-    cout << "Default constructor called" << endl;
+    cout << "DiamondTrap: Default constructor called" << endl;
 }
 
 DiamondTrap::DiamondTrap(string name)
