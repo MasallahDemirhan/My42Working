@@ -18,7 +18,7 @@ Character& Character::operator=(const Character& character)
     {
         _materia[i] = character._materia[i]->clone();
     }
-    
+    return (*this);
 }
 
 Character::~Character()
@@ -40,6 +40,7 @@ void Character::equip(AMateria* materia)
             if (!this->_materia[i])
             {
                 _materia[i] = materia;
+                break;
             }
             
         }

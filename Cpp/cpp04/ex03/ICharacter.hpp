@@ -2,6 +2,10 @@
 
 class AMateria;
 
+using std::string;
+using std::endl;
+using std::cout;
+
 
 class ICharacter
 {

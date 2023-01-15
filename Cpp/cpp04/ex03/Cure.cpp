@@ -11,15 +11,23 @@ Cure& Cure::operator=(const Cure& cure)
     return (*this);
 }
 
-Cure::Cure(const Cure& cure)
+Cure::Cure(const Cure& cure): AMateria(cure)
 {
-    if (this != &cure)
-    {
-        this->type = cure.getType();
-    }
+    cout << "Cure copy constructor called." << endl;
 }
 
-AMateria* AMateria::clone() const
+AMateria* Cure::clone() const
 {
-    return new Cure(*this);
+    Cure *cln = new Cure();
+    return (cln);
+}
+
+void Cure::use(ICharacter& target)
+{
+    cout << "* heals " << target.getName() <<"\'s wounds *" << endl;
+}
+
+Cure::~Cure()
+{
+    cout << "Cure destructor called." << endl;
 }
