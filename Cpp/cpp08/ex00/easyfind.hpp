@@ -8,9 +8,9 @@ class ElementNotFound: public std::exception
 {
 
 public:
-    const char * what() throw ()
+    const char * what() const throw()
     {
-        return "Element not found in container.";
+        return ("Element not found in container.");
     }
 
 };
@@ -23,13 +23,13 @@ typename T::iterator easyfind(T& container, int val)
     typename T::iterator res = find(container.begin(), container.end(), val);
     
     
-    if (res == container.end())
+    if (res != container.end())
     {   
-        throw ElementNotFound;
+        return res;
     }
     else
     {
-        return res;
+        throw ElementNotFound();
     }
     
 }
